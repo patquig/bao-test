@@ -1,0 +1,65 @@
+//Display
+@mixin FlexCentered {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin FlexSpace {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@mixin Flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+//Headings
+@mixin H1 {
+    font:$h1-w 32px/42px $head-font;
+}
+
+@mixin H2 {
+    font:$h2-w 28px/1.2 $head-font;
+}
+
+@mixin H3 {
+    font:$h3-w 22px/1.2 $head-font;
+}
+
+@mixin H4 {
+    font:$h4-w 18px/1.2 $head-font;
+}
+
+@mixin H5 {
+    font:$h5-w 16px/1.2 $font;
+}
+
+// transistions 
+
+@mixin DefaultTrans {
+  transition: $trans-s ease;
+}
+
+@mixin CubeTrans {
+  transition: $trans-s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+@mixin SlowTrans {
+  transition: $trans-l ease;
+}
+
+//buttons
+@mixin Btn {
+  background-color:$btn-prim;
+  color:$btn-prim-text;
+  border-radius:$btn-border;
+  box-shadow:0 0 0 rgba(0,0,0,0);
+  transition: $trans-s;
+  &:hover {
+    box-shadow:$btn-shad;
+  }
+}

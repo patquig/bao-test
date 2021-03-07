@@ -1,0 +1,57 @@
+//colours
+$primary:#000;
+$secondary:#fff;
+$success:#247024;
+$error:#bd1b1b;
+$text: #000;
+$text-light:#fff;
+$heading:#202020;
+$link: #646464;
+$header-link: #000;
+$bg: #fff;
+
+//colors
+$white:#fff;
+$black:#1a1a1a;
+$red:rgb(226, 53, 53);
+$green:rgb(36, 139, 36);
+
+//font
+$font: "DIN Pro", serif;
+$head-font: "DIN Pro", sans-serif;
+$h1-w: 300;
+$h2-w: 300;
+$h3-w: 300;
+$h4-w: 400;
+$h5-w: 300;
+
+//shadows
+$el-shad:0 0 40px rgba(0, 0, 0, 0.2);
+$sml-shad:0 5px 20px rgba(0, 0, 0, 0.1);
+$btn-shad:0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+0 12.5px 10px rgba(0, 0, 0, 0.06);
+$input-shad-focus:0 0px 2.2px rgba(0, 0, 0, 0.034),
+0 4.7px 5.3px rgba(0, 0, 0, 0.048),
+0 8.5px 10px rgba(0, 0, 0, 0.06);
+$input-shad:0 2.5px 5px rgba(0, 0, 0, 0.1);
+//trans
+$trans-s: 0.15s;
+$trans-m:0.5s;
+$trans-l: 0.8s;
+
+//border
+$border-rad: 12px;
+$border-w: 2px;
+
+//button
+$btn-prim: $secondary;
+$btn-prim-text: #000;
+$btn-out-text: $link;
+$btn-border:5px;
+
+//breakpoints
+$break-xl:1440px;
+$break-l:1200px;
+$break-m:768px;
+$break:450px;

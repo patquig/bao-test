@@ -1,0 +1,290 @@
+main {
+  width: 100%;
+  max-width: $break-xl;
+  margin: auto;
+  border-left: 1px solid $primary;
+  border-right: 1px solid $primary;
+  background-color: $secondary;
+
+  @media (max-width: $break-xl) {
+    border-left: none;
+    border-right: none;
+  }
+  @media (max-width: $break-l) {
+    padding: 52px 0 0;
+  }
+  .banner {
+    position: relative;
+    width: 100%;
+    padding: 8px;
+    background-color: $primary;
+    color: $secondary;
+    .close-banner {
+      @include FlexCentered;
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      cursor: pointer;
+      z-index: 2;
+      svg {
+        height: 8px;
+        width: 8px;
+        fill: $secondary;
+      }
+    }
+    .content {
+      @include FlexCentered;
+      text-align: center;
+      margin: auto;
+    }
+  }
+
+  .content-container {
+    @include FlexCentered;
+    width: 100%;
+    background-color: $secondary;
+    border-bottom: 1px solid $primary;
+    .col {
+      width: 50%;
+      @media (max-width: $break-l) {
+        width: 100%;
+      }
+      &.col-l {
+        @include FlexCentered;
+        padding: 2rem;
+        .inner {
+          width: 100%;
+          max-width: 460px;
+          h1 {
+            margin: 0 0 40px 0;
+          }
+          p {
+            margin: 0 0 62px 0;
+            a {
+              font-weight: 500;
+              text-decoration: underline;
+            }
+          }
+          .email-results {
+            width: 100%;
+            max-width: 360px;
+            h4 {
+              margin: 0;
+            }
+
+            #sign-up {
+              @include Flex;
+              cursor: pointer;
+              .fake-input {
+                width: 15px;
+                height: 15px;
+                margin: 0 10px 0 0;
+                background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 15 15'%3E%3Cg id='Artboard1' transform='matrix(0.892695,0,0,0.956955,0.816697,0.496109)'%3E%3Cg transform='matrix(0.700127,0,0,0.653113,-0.914867,-0.518424)'%3E%3Cpath d='M22,2L22,22L2,22L2,2L22,2ZM24,0L0,0L0,24L24,24L24,0Z' style='fill-rule:nonzero;' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+              }
+              label {
+                top: -2.5px;
+                width: calc(100% - 25px);
+                flex-grow: 1;
+                cursor: pointer;
+              }
+              input[type=checkbox]:checked + .fake-input {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 15 15'%3E%3Cg id='Artboard1' transform='matrix(0.884667,0,0,0.899223,0.566547,0.191956)'%3E%3Cg transform='matrix(0.70648,0,0,0.695044,-0.640407,-0.213469)'%3E%3Cpath d='M22,2L22,22L2,22L2,2L22,2ZM24,0L0,0L0,24L24,24L24,0ZM18.459,8.409L17.037,7L10.016,14.183L6.936,11.246L5.541,12.681L10.041,17L18.459,8.409Z' style='fill-rule:nonzero;' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+              }
+            }
+          }
+        }
+      }
+      &.col-r {
+        @media (max-width: $break-l) {
+          border-top: 1px solid $primary;
+        }
+        .products {
+          @include Flex;
+          width: 100%;
+          height: 100%;
+          .product {
+            @include Flex;
+            justify-content: space-between;
+            width: 50%;
+            border-left: 1px solid $primary;
+            text-align: center;
+            @media (max-width: $break-l) {
+              border-left: unset;
+              &:nth-child(2n) {
+                border-left: 1px solid $primary;
+              }
+            }
+            @media (max-width: $break-m) {
+              width: 100%;
+              &:nth-child(2n) {
+                border-left: unset;
+              }
+            }
+            .details {
+              padding: 18px;
+              margin: auto;
+              img {
+                transform: scale3d(1, 1, 1);
+                transition: transform $trans-s ease;
+                z-index: 1;
+              }
+              .content {
+                padding: 25px 0 0;
+                z-index: 2;
+                .badge {
+                  position: absolute;
+                  top: 0;
+                  width: 100%;
+                  .text {
+                    font-size: 11px;
+                    font-weight: 500;
+                    margin: auto;
+                    padding: 2px 10px;
+                    text-transform: uppercase;
+                    background-color: $primary;
+                    color: $secondary;
+                    width: fit-content;
+                  }
+                }
+                h3 {
+                  margin: 0 0 2px 0;
+                }
+                .price {
+                  font-weight: 500;
+                }
+              }
+            }
+            .add-btn {
+              width: 100%;
+              background-color: $secondary;
+              color: $primary;
+              border-top: 1px solid $primary;
+              border-bottom: 1px solid $primary;
+              &:hover {
+                background-color: $primary;
+                color: $secondary;
+              }
+            }
+            &:nth-child(3),
+            &:nth-child(4) {
+              .add-btn {
+                border-bottom: unset;
+              }
+            }
+            &:nth-child(3) {
+              @media (max-width: $break-m) {
+                border-bottom: 1px solid $primary;
+              }
+            }
+            &:hover {
+              .details {
+                img {
+                  transform: scale3d(1.05, 1.05, 1.05);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .newsletter {
+    @include FlexCentered;
+    width: 100%;
+    padding: 112px 1rem;
+    background-image: url("img/bg.jpg");
+    background-position: center;
+    background-size: cover;
+    @media (max-width: $break-m) {
+      padding: 60px 1rem;
+      background-position: top;
+    }
+    .sign-up-form {
+      width: 100%;
+      max-width: 360px;
+      text-align: center;
+      h2 {
+        font-size: 32px;
+      }
+      .subheader {
+        margin: 8px auto 40px;
+      }
+    }
+  }
+
+  .usp-container {
+    width: 100%;
+    background-color: $primary;
+    color: $secondary;
+    padding: 40px 150px;
+    @media (max-width: $break-l) {
+      padding: 40px;
+    }
+    .inner {
+      @include Flex;
+      align-items: center;
+      justify-content: space-between;
+      @media (max-width: $break-l) {
+        justify-content: space-evenly;
+      }
+      .usp {
+        width: 100%;
+        max-width: 200px;
+        text-align: center;
+        @media (max-width: $break-l) {
+          max-width: 200px;
+          margin: 15px 0;
+        }
+        @media (max-width: $break-m) {
+          max-width: 100%;
+        }
+        h4 {
+          margin: 0 0 15px 0;
+          color: inherit;
+        }
+      }
+    }
+  }
+
+  .input-wrap {
+    position: relative;
+    margin: 30px 0;
+    input.email {
+      z-index: 1;
+    }
+    .submit {
+      @include FlexCentered;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 64px;
+      z-index: 2;
+      cursor: pointer;
+    }
+    form {
+      position: relative;
+      button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: transparent;
+        outline: none;
+        border: none;
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          height:100%;
+          width: 100%;
+          background-image: url("data:image/svg+xml, %3Csvg width='29' height='13' viewBox='0 0 29 13' fill='none' xmlns='http://www.w3.org/2000/svg' style='user-select: none;' %3E%3Cmask id='mask0' mask-type='alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='29' height='13' %3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0.000183105H28.327V12.9632H0V0.000183105Z' fill='white' /%3E%3C/mask%3E%3Cg mask='url(%23mask0)'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M28.1923 6.14154C28.26 6.22702 28.3065 6.32511 28.3156 6.44015C28.3164 6.45196 28.3246 6.46142 28.3246 6.47363C28.3246 6.47639 28.327 6.47836 28.327 6.48151C28.327 6.48466 28.325 6.48742 28.325 6.49096C28.325 6.49805 28.3211 6.50396 28.3207 6.51066C28.3136 6.65051 28.2588 6.77657 28.1702 6.87348C28.1631 6.88175 28.1667 6.89436 28.1584 6.90263C28.1505 6.91051 28.1379 6.90696 28.13 6.91445C28.1218 6.92114 28.1092 6.91957 28.1017 6.92627L21.6446 12.7948C21.4201 13.0193 21.0553 13.0193 20.8307 12.7948C20.6054 12.5694 20.6054 12.2062 20.8307 11.9813L26.2328 7.07005H0.589727C0.263545 7.07005 0 6.80611 0 6.48151C0 6.15651 0.263545 5.89218 0.589727 5.89218H26.2328L20.8307 0.982114C20.6054 0.757569 20.6054 0.393175 20.8307 0.168236C21.0553 -0.0559158 21.4201 -0.0559158 21.6446 0.168236L28.069 6.00721C28.0784 6.0143 28.0835 6.02572 28.0922 6.03321C28.1123 6.04857 28.1403 6.04227 28.1584 6.06039C28.1808 6.08324 28.1742 6.11672 28.1923 6.14154Z' fill='white' /%3E%3C/g%3E%3C/svg%3E");
+          background-size: 29px 13px;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+      }
+    }
+  }
+}

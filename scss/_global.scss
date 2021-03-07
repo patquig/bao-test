@@ -1,0 +1,232 @@
+@import "font";
+@import "variables";
+@import "mixins";
+@import "animation";
+
+//Base
+@import "base/header";
+@import "base/main";
+@import "base/footer";
+
+//resets&rules
+* {
+  position: relative;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased !important;
+  text-rendering: optimizeLegibility;
+  line-height: 22px;
+}
+
+ul,
+li,
+ol {
+  padding: 0;
+  list-style-type: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
+  user-select: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  margin: 0;
+}
+
+p {
+  margin: 0 0 2rem 0;
+  max-width: 800px;
+}
+
+body {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  z-index: 0;
+}
+
+
+.logo {
+  cursor: pointer;
+}
+
+//Headings
+
+h1 {
+  @include H1();
+}
+h2 {
+  @include H2();
+}
+h3 {
+  @include H3();
+}
+h4 {
+  @include H4();
+}
+h5 {
+  @include H5();
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: $primary;
+  margin: 0 0 25px 0;
+  cursor: default;
+}
+
+//Base
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+}
+
+body {
+  font-family: $font;
+  font-weight: 300;
+  color: $primary;
+}
+
+//Links
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  transition: $trans-s;
+  color: $link;
+}
+
+//Buttons
+
+.btn {
+  display: inline-block;
+  background-color: transparent;
+  color: $secondary;
+  background-color: $primary;
+  border: 1px solid $secondary;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all $trans-s ease;
+  cursor: pointer;
+  overflow: hidden;
+  &:hover {
+    color: $primary;
+    background-color: $secondary;
+    border: 1px solid $primary;
+  }
+  a {
+    padding: 15px 30px;
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+//Input
+
+input {
+  font-family: $font;
+  border: unset;
+  transition: $trans-s;
+  outline: none;
+  &[type="email"] {
+    position: relative;
+    padding: 1rem 1.5rem;
+    width: 100%;
+    font-size: 14px;
+    background-color: $primary;
+    color: $secondary;
+    &::placeholder {
+      color: $secondary;
+      font-weight: 300;
+    }
+  }
+}
+
+#notification-container {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+
+  #notification {
+    width: 100%;
+    max-width: 300px;
+    margin: auto;
+    padding: 1rem;
+    opacity: 1;
+    text-align: center;
+    user-select: none;
+    transform: translateY(100%);
+    transition: transform $trans-m cubic-bezier(0.215, 0.61, 0.355, 1);
+    &.show {
+      transform: translateY(0);
+    }
+    &.hide {
+      transform: translateY(100%);
+    }
+    &.error {
+      background-color: $red;
+      color: $secondary;
+    }
+    &.success {
+      background-color: $green;
+      color: $secondary;
+    }
+  }
+  &.show {
+    display: block;
+  }
+}
+
+// Overlay
+
+#overlay {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  transition: opacity $trans-s ease, visibility 0s $trans-s;
+  z-index: 7;
+}
+body.show-mobile-menu {
+  #overlay {
+    visibility: visible;
+    opacity: 1;
+    animation: fadeIn $trans-s ease both;
+    transition: opacity $trans-s ease, visibility 0s;
+  }
+}
+
+//Selections
+::-moz-selection {
+  background: $secondary;
+  color: $text-light;
+}
+::selection {
+  background: $secondary;
+  color: $text-light;
+}
